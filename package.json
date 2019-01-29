@@ -1,0 +1,23 @@
+{
+  "name": "apostle-api",
+  "version": "1.0.0",
+  "description": "backend js work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kit-foxboy/Apostle-API.git"
+  },
+  "keywords": [
+    "Apostle",
+    "DSP"
+  ],
+  "author": "Stephen - Geoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kit-foxboy/Apostle-API/issues"
+  },
+  "homepage": "https://github.com/kit-foxboy/Apostle-API#readme"
+}
