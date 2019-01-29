@@ -1,8 +1,4 @@
-CREATE DATABASE dsp;
-
-USE dsp;
-
-CREATE TABLE `employee` (
+	CREATE TABLE `employee` (
   `idEmployee` int(11) NOT NULL,
   `lastName` varchar(45) DEFAULT NULL,
   `firstName` varchar(45) DEFAULT NULL,
@@ -12,6 +8,7 @@ CREATE TABLE `employee` (
   `cellPhone` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEmployee`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table'
+
 
 CREATE TABLE `vehicle` (
   `idVehicle` int(11) NOT NULL COMMENT 'vehcile primary key',
