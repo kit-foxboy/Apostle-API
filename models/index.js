@@ -1,33 +1,42 @@
-module.exports = function(sequelize, DataTypes) {
-  var employee = sequelize.define("empoloyee", {
-    lastName: Datatypes.varchar,
-    firstName:Datatypes.varchar,
-    employeeNbr:Datatypes.varchar,
-    department: Datatypes.varchar,
-    title: Datatypes.varchar,
-    cellPhone: Datatypes.varchar,
+"use strict";
 
+var fs = require("fs");
+var path = require("path");
+var Sequelize = require("sequelize");
+var basename = path.basename(module.filename);
+var env = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/../config/config.json")[env];
+var db = {};
+
+if (config.use_env_variable) {
+  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+} else {
+  var sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
+}
+
+fs.readdirSync(__dirname)
+  .filter(function(file) {
+    return (
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+    );
+  })
+  .forEach(function(file) {
+    var model = sequelize.import(path.join(__dirname, file));
+    db[model.name] = model;
   });
 
-  return employees;
-};
-
-var vehicles = sequelize.define("vehicles", {
-
-  vinNbr: Datatypes.varchar,
-  registrationNbr: Datatypes.varchar, 
-  registrationDate: Datatypes.varchar,
-  make: Datatypes.varchar,
-  model: Datatypes.varchar,
-  year: Datatypes.varchar,
-
+Object.keys(db).forEach(function(modelName) {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
 });
 
-return vehicles;
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-
- 
-
-
-
-
+module.exports = db;
