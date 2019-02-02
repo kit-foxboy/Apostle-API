@@ -1,5 +1,5 @@
 CREATE TABLE `employees` (
-  `idEmployee` int(11) NOT NULL,
+  `idEmployee` int NOT NUll AUTO_INCREMENT,
   `lastName` varchar(45) DEFAULT NULL,
   `firstName` varchar(45) DEFAULT NULL,
   `employeeNbr` varchar(45) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table'
 
 CREATE TABLE `vehicles` (
-  `idVehicle` int(11) NOT NULL COMMENT 'vehcile primary key',
+  `idVehicle` int NOT NUll AUTO_INCREMENT,
   `vinNbr` varchar(45) NOT NULL,
   `registrationNbr` varchar(45) DEFAULT NULL,
   `registrationDate` varchar(45) DEFAULT NULL,

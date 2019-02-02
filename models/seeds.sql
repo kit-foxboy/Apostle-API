@@ -3,9 +3,9 @@ USE dsp;
 INSERT INTO employees (lastname,firstName,employeeNbr,department,title,cellPhone)
 VALUES 
 ('Rigor', 'Stref','Bissett','Hanson'),
-('Chris', 'Alan',"Stephen",'Geoff'),
+('Chris', 'Alan','Stephem','Geoff'),
 ('1','2','3','4'),
-('Shipping','Shipping','Shipping',"Shipping"),
+('Shipping','Shipping','Shipping','Shipping'),
 ('lead','lead','lead','lead'),
 ('555-555-333','333-333-3333','222-222-2222','666-666-6666');
 

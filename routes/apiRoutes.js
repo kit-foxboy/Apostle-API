@@ -1,17 +1,20 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
 
-  app.get("/api/employees", function(req, res) {
-    db.employees.findAll({}).then(function(dbemployees) {
+  app.get("/api/employees", function (req, res) {
+
+    // res.send("get working");
+    db.Employee.findAll({}).then(function(dbemployees) {
       res.json(dbemployees);
     });
   });
 
   // Create a new example
   app.post("/api/employees", function(req, res) {
-    db.employees.create(req.body).then(function(dbemployees) {
+    // res.send("post working");
+    db.Employee.create(req.body).then(function(dbemployees) {
       res.json(dbemployees);
     });
   });
@@ -24,15 +27,17 @@ module.exports = function(app) {
   //   });
 
   app.get("/api/vehicles", function(req, res) {
-    db.vehicles.findAll({}).then(function(dbvehicles) {
+    // res.send("get vehicles");
+    db.Vehicle.findAll({}).then(function(dbvehicles) {
       res.json(dbvehicles);
     });
   });
 
   // Create a new example
   app.post("/api/vehicles", function(req, res) {
-    db.vehicles.create(req.body).then(function(dbemployee) {
-      res.json(dbemployee);
+    // res.send("post vehciles");
+    db.Vehicle.create(req.body).then(function(dbvehicles) {
+      res.json(dbvehicles);
     });
   });
 
