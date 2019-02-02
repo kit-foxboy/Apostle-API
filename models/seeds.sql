@@ -1,16 +1,16 @@
 USE dsp;
 
-INSERT INTO employee (lastname,firstName,employeeNbr,department,title,cellPhone)
+INSERT INTO employees (lastname,firstName,employeeNbr,department,title,cellPhone)
 VALUES 
 ('Rigor', 'Stref','Bissett','Hanson'),
-('Chris', 'Alan',"Stephen",'Geoff'),
+('Chris', 'Alan','Stephem','Geoff'),
 ('1','2','3','4'),
-('Shipping','Shipping','Shipping',"Shipping"),
+('Shipping','Shipping','Shipping','Shipping'),
 ('lead','lead','lead','lead'),
 ('555-555-333','333-333-3333','222-222-2222','666-666-6666');
 
 
-INSERT INTO vehicle (vinNbr, registrationNbr, registrationDate, make, model, year)
+INSERT INTO vehicles (vinNbr, registrationNbr, registrationDate, make, model, year)
 VALUES 
 ('12345','54432','455678','98765'),
 ('YM12345','YM 54322','YU77777','YT00000'),

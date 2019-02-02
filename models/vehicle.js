@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
 
-  var vehicle = sequelize.define("Vehicle", {
+  var Vehicle = sequelize.define("Vehicle", {
 
     vinNbr: DataTypes.STRING,
     registrationNbr: DataTypes.STRING,
@@ -9,6 +9,13 @@ module.exports = function (sequelize, DataTypes) {
     model: DataTypes.STRING,
     year: DataTypes.STRING,
 
+  
+  },
+  {
+    timestamps: false
   });
-  return vehicle;
-}
+
+
+
+return Vehicle;
+};
