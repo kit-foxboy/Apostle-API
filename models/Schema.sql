@@ -7,7 +7,7 @@ CREATE TABLE `employees` (
   `title` varchar(45) DEFAULT NULL,
   `cellPhone` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEmployee`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table';
 
 CREATE TABLE `vehicles` (
   `idVehicle` int NOT NUll AUTO_INCREMENT,
@@ -18,4 +18,16 @@ CREATE TABLE `vehicles` (
   `model` varchar(45) DEFAULT NULL,
   `year` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idVehicle`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vehicle table				'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vehicle table';
+
+CREATE TABLE 'inspection'(
+  'iduserName' int NOT NULL AUTO_INCREMENT,
+  'comments' varchar(45) NOT NULL,
+  'cargo' varchar(45) DEFAULT NULL,
+  'brakes' varchar(45) DEFAULT NULL,
+  'tires' varchar(45) DEFAULT NULL,
+  'horn' varchar (45) DEFAULT NULL,
+  PRIMARY KEY ('iduserName')
+  
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='inspection table';
+
