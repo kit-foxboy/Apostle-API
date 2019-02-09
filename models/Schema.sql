@@ -1,5 +1,6 @@
+CREATE DATABASE dsp;
 CREATE TABLE `employees` (
-  `idEmployee` int NOT NUll AUTO_INCREMENT,
+  `id` int NOT NUll AUTO_INCREMENT,
   `lastName` varchar(45) DEFAULT NULL,
   `firstName` varchar(45) DEFAULT NULL,
   `employeeNbr` varchar(45) NOT NULL,
@@ -10,7 +11,7 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table';
 
 CREATE TABLE `vehicles` (
-  `idVehicle` int NOT NUll AUTO_INCREMENT,
+  `id` int NOT NUll AUTO_INCREMENT,
   `vinNbr` varchar(45) NOT NULL,
   `registrationNbr` varchar(45) DEFAULT NULL,
   `registrationDate` varchar(45) DEFAULT NULL,
@@ -21,13 +22,20 @@ CREATE TABLE `vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vehicle table';
 
 CREATE TABLE 'inspection'(
-  'iduserName' int NOT NULL AUTO_INCREMENT,
+  'id' int NOT NULL AUTO_INCREMENT,
   'comments' varchar(45) NOT NULL,
   'cargo' varchar(45) DEFAULT NULL,
   'brakes' varchar(45) DEFAULT NULL,
   'tires' varchar(45) DEFAULT NULL,
   'horn' varchar (45) DEFAULT NULL,
-  PRIMARY KEY ('iduserName')
+  PRIMARY KEY ('idInspection')
   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='inspection table';
+CREATE TABLE 'user'(
+   'idUser' int NOT NULL AUTO_INCREMENT,
+  'userName' varchar(45) NOT NULL,
+  'passWord' varchar(45) Not NULL,
+  PRIMARY KEY ('iduserName')
+  
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='user table';
 

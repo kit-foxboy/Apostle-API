@@ -1,10 +1,9 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Get all examples
 
-  app.get("/api/employees", function (req, res) {
-
+  app.get("/api/employees", function(req, res) {
     // res.send("get working");
     db.Employee.findAll({}).then(function(dbemployees) {
       res.json(dbemployees);
@@ -39,7 +38,7 @@ module.exports = function (app) {
       res.json(dbinspection);
     });
   });
- 
+
   // Create a new example
   app.post("/api/inspection", function(req, res) {
     // res.send("post vehciles");
@@ -47,13 +46,38 @@ module.exports = function (app) {
       res.json(dbinspection);
     });
   });
+  //api login
+  app.post("/api/login", function(req, res) {
+    // res.send("get vehicles");
+    // console.log(req.body);
+    db.User.findOne({
+      where: {
+
+        userName: req.body.userName,
+        password: req.body.password
+      }
+    }).then(function(dbuser) {
+      if (dbuser === null) {
+        res.json({ error: "no user found" });
+      } else {
+        res.json(dbuser)
+
+      }
+    });
+  });
+
+  // app.post
+  //username password
+  //search user table for username password
+  //if find usernamepassword return the id
+  // if not return an error string
   app.get("/api/user", function(req, res) {
     // res.send("get vehicles");
     db.User.findAll({}).then(function(dbuser) {
       res.json(dbuser);
     });
   });
- 
+
   // Create a new example
   app.post("/api/user", function(req, res) {
     // res.send("post vehciles");

@@ -28,3 +28,8 @@ VALUES
 ('Dodge','Dodge','Dodge','Dodege'),
 ('Powerwagon','Powerwagon','Powerwagon','Powerwagon'),
 ('2018','2018','2015','2012');
+INSERT INTO user (idUser, userName, passWord)
+VALUES 
+('2343', '6373', '9829', '4323'),
+('alan','geoff','steve','chriss'),
+('YM12345','YM 54322','YU77777','YT00000');
