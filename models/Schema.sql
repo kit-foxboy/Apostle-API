@@ -1,4 +1,6 @@
+DROP DATABASE IF EXISTS dsp;
 CREATE DATABASE dsp;
+USE dsp;
 CREATE TABLE `employees` (
   `id` int NOT NUll AUTO_INCREMENT,
   `lastName` varchar(45) DEFAULT NULL,
