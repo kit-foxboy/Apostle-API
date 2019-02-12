@@ -32,6 +32,12 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/vehicles", function(req, res) {
+    db.Vehicle.create(req.body).then(function(dbVehicle) {
+      res.json(dbVehicle);
+    });
+  });
+
   app.get("/api/inspection", function(req, res) {
     // res.send("get vehicles");
     db.Inspection.findAll({}).then(function(dbinspection) {
