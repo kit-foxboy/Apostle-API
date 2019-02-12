@@ -52,7 +52,6 @@ module.exports = function(app) {
     // console.log(req.body);
     db.User.findOne({
       where: {
-
         userName: req.body.userName,
         password: req.body.password
       }
@@ -60,8 +59,7 @@ module.exports = function(app) {
       if (dbuser === null) {
         res.json({ error: "no user found" });
       } else {
-        res.json(dbuser)
-
+        res.json(dbuser);
       }
     });
   });

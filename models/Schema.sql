@@ -1,4 +1,8 @@
+DROP DATABASE IF EXISTS dsp;
+
 CREATE DATABASE dsp;
+USE dsp;
+
 CREATE TABLE `employees` (
   `id` int NOT NUll AUTO_INCREMENT,
   `lastName` varchar(45) DEFAULT NULL,
@@ -7,7 +11,7 @@ CREATE TABLE `employees` (
   `department` varchar(45) DEFAULT NULL,
   `title` varchar(45) DEFAULT NULL,
   `cellPhone` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idEmployee`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='employee table';
 
 CREATE TABLE `vehicles` (
@@ -18,24 +22,24 @@ CREATE TABLE `vehicles` (
   `make` varchar(45) DEFAULT NULL,
   `model` varchar(45) DEFAULT NULL,
   `year` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idVehicle`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='vehicle table';
 
-CREATE TABLE 'inspection'(
-  'id' int NOT NULL AUTO_INCREMENT,
-  'comments' varchar(45) NOT NULL,
-  'cargo' varchar(45) DEFAULT NULL,
-  'brakes' varchar(45) DEFAULT NULL,
-  'tires' varchar(45) DEFAULT NULL,
-  'horn' varchar (45) DEFAULT NULL,
-  PRIMARY KEY ('idInspection')
+CREATE TABLE `inspection`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `comments` varchar(45) NOT NULL,
+  `cargo` varchar(45) DEFAULT NULL,
+  `brakes` varchar(45) DEFAULT NULL,
+  `tires` varchar(45) DEFAULT NULL,
+  `horn` varchar (45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='inspection table';
-CREATE TABLE 'user'(
-   'idUser' int NOT NULL AUTO_INCREMENT,
-  'userName' varchar(45) NOT NULL,
-  'passWord' varchar(45) Not NULL,
-  PRIMARY KEY ('iduserName')
+CREATE TABLE `user`(
+  `id` int NOT NULL AUTO_INCREMENT,
+  `userName` varchar(45) NOT NULL,
+  `passWord` varchar(45) Not NULL,
+  PRIMARY KEY (`id`)
   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='user table';
 
