@@ -27,11 +27,13 @@ CREATE TABLE `vehicles` (
 
 CREATE TABLE `inspection`(
   `id` int NOT NULL AUTO_INCREMENT,
-  `comments` varchar(45) NOT NULL,
+  `userId` int NOT NULL,
+  `comments` varchar(45) NULL,
   `cargo` varchar(45) DEFAULT NULL,
   `brakes` varchar(45) DEFAULT NULL,
   `tires` varchar(45) DEFAULT NULL,
   `horn` varchar (45) DEFAULT NULL,
+  `endDatetime` DATE DEFAULT NULL, 
   PRIMARY KEY (`id`)
   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='inspection table';
