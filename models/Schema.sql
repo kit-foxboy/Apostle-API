@@ -5,6 +5,7 @@ USE dsp;
 
 CREATE TABLE `employees` (
   `id` int NOT NUll AUTO_INCREMENT,
+  `userId` int NOT NULL,
   `lastName` varchar(45) DEFAULT NULL,
   `firstName` varchar(45) DEFAULT NULL,
   `employeeNbr` varchar(45) NOT NULL,
@@ -28,6 +29,7 @@ CREATE TABLE `vehicles` (
 CREATE TABLE `inspection`(
   `id` int NOT NULL AUTO_INCREMENT,
   `userId` int NOT NULL,
+  `vehicleId` int NOT NULL,
   `comments` varchar(45) NULL,
   `cargo` varchar(45) DEFAULT NULL,
   `brakes` varchar(45) DEFAULT NULL,
@@ -37,7 +39,7 @@ CREATE TABLE `inspection`(
   PRIMARY KEY (`id`)
   
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='inspection table';
-CREATE TABLE `user`(
+CREATE TABLE `users`(
   `id` int NOT NULL AUTO_INCREMENT,
   `userName` varchar(45) NOT NULL,
   `passWord` varchar(45) Not NULL,
