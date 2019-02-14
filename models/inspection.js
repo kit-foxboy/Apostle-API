@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     brakes: DataTypes.STRING,
     tires: DataTypes.STRING,
     horn: DataTypes.STRING,
-    endDatetime: DataTypes.DATE
+    endDatetime: DataTypes.DATE(6)
   });
   return Inspection;
 };

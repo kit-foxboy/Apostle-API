@@ -76,6 +76,36 @@ module.exports = function(app) {
       res.json(dbinspection);
     });
   });
+  app.post("/api/update-inspection", function(req, res) {
+    if (!req.body.apiKey || req.body.apiKey !== apiKey) {
+      return res.json({ error: "Invalid API key" });
+    }
+    if (!req.body.inspectionId || parseInt(req.body.inspectionId) === 0) {
+      return res.json({ error: "Inspection ID required." });
+    }
+    db.Inspection.update(
+      {
+        brakes: req.body.brakes,
+        cargo: req.body.cargo,
+        horn: req.body.horn,
+        tires: req.body.tires,
+        comments: "",
+        endDatetime: new Date()
+      },
+      {
+        where: {
+          id: req.body.inspectionId
+        }
+      }
+    )
+      .then(dbInspection => {
+        res.json(dbInspection);
+      })
+      .catch(err => {
+        console.log(err);
+        res.sendStatus(400);
+      });
+  });
   //api login
   app.post("/api/login", function(req, res) {
     if (!req.body.apiKey || req.body.apiKey !== apiKey) {
